@@ -13,26 +13,32 @@
         <h1>Commission Calculator</h1>
         <form class="input_form">
             <h2>Commission Type</h2>
-            <input type="radio" id="portrait" class="commission_type" name="commission_type" value="60">
-            <label for="portrait">Portrait</label><br>
+            <div class="radio_buttons">
+                <div class="left">
+                    <input type="radio" id="portrait" class="commission_type" name="commission_type" value="60">
             <input type="radio" id="flats" class="commission_type" name="commission_type" value="70" checked>
-            <label for="flats">Flat Colored</label><br>
             <input type="radio" id="shaded" class="commission_type" name="commission_type" value="90">
-            <label for="shaded">Shaded</label><br>
             <input type="radio" id="scene" class="commission_type" name="commission_type" value="120">
-            <label for="scene">Scene</label><br>
             <input type="radio" id="painted" class="commission_type" name="commission_type" value="170">
-            <label for="painted">Painted</label><br>
+        </div>
+            <div class="right"><label for="portrait">Portrait</label><br>
+            <label for="flats">Flat Color</label><br>
+            <label for="shaded">Shaded</label><br>
+            <label for="scene">Scene</label><br>
+            <label for="painted">Painted</label></div>
+            
+        </div>
+            <hr>
 
             <h2>Character amount</h2>
-            <input type="number" id="characteramount" name="character_amount" value="1" min="1"><br><br><br>
+            <input type="number" id="characteramount" name="character_amount" value="1" min="1">
+            <hr>
 
-            <input type="button" value="Submit" class="submit_button">
+            <input type="button" value="Calculate!" class="submit_button">
         </form>
 
         <h1 id="result"></h1>
     </main>
-    
 </body>
 
 <script src="script.js"></script>

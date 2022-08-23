@@ -1,18 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url("background.png");
-    background-size:100%;
+    background: url("background.svg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 40px auto;
+}
+
+h2 {
+    margin: 20px 0;
 }
 
 .container {
     background-color: #2E2E2E;
-    width: 30vw;
-    margin:auto;
-    margin-top: 5%;
-    padding: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    min-width: 500px;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2%;
     text-align: center;
     color:whitesmoke;
     border: solid #000000;
     border-radius: 20px;
+}
+
+hr {
+    border-top: 1px dashed whitesmoke;
+    border-bottom: none;
+    max-width: 35%;
+    margin: 40px auto ! important;
+}
+
+input[type="radio"] {
+    display: block;
+}
+
+label {
+    font-size: 18px;
+    margin: 0;
+}
+
+.radio_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right label {
+    text-align: left;
+}
+
+input[type="radio"] {
+    height: 21px;
+}
+
+input[type='radio']:after {
+    width: 16px;
+        height: 16px;
+        border-radius: 15px;
+        position: relative;
+        background-color: white;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid black;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: black;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+#characteramount {
+    font-size: 18px;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    padding-left: 19px;
+}
+
+.submit_button {
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.submit_button:hover {
+    background-color: rgb(214, 214, 214);
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 40px;
 }
