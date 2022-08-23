@@ -23,9 +23,8 @@ h2 {
 
 .container {
     background-color: #2E2E2E;
-    min-width: 500px;
-    max-width: 600px;
-    margin: 50px auto;
+    margin: 50px 20px;
+    min-width: 350px;
     padding: 2%;
     text-align: center;
     color:whitesmoke;
@@ -116,3 +115,11 @@ input[type='radio']:checked:after {
 #result {
     margin-top: 40px;
 }
+
+@media only screen and (min-width:600px) {
+    .container {
+        min-width: 500px;
+        max-width: 600px;
+        margin: auto;
+    }
+  }
