@@ -1,49 +1,32 @@
 
-
-/*
-Portrait = 60
-Flat colors = 70
-Shaded = 90
-Scene = 120
-Painted = 170
-
-const portraitPrice = 60;
-const flatPrice = 70;
-const shadedPrice = 90;
-const scenePrice = 120;
-const paintedPrice = 170;
-
-const commissionType = ["Portrait", "Flat Colors","Shaded", "Scene", "Painted"];
-*/
-
 // Selects the submit button.
 const submitButton = document.querySelector('.submit_button');
+
+// Adds eventlistener to be triggered every time the submit button is clicked
 submitButton.addEventListener("click", displayresult);
-
-
 
 // Check which radio button is selected and returns the value of said radio button.
 function getBasePrice() {
     let selectedType;
     const radioButtons = document.querySelectorAll('input[name="commission_type"]');
 
+    // Checks which of the radioButton of radioButtons is selected
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedType = radioButton.value;
             break;
         }
     }
-
-    console.log(selectedType);
-
+    
     return selectedType;
-
 };
 
+// Checks which radio button is selected and returns the ID of said radio button.
 function getCharacterAmountPrice() {
     let selectedType;
     const radioButtons = document.querySelectorAll('input[name="commission_type"]');
 
+    // Checks which of the radioButton of radioButtons is selected
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedType = radioButton.id;
@@ -54,6 +37,7 @@ function getCharacterAmountPrice() {
     return selectedType;
 }
 
+// Calculates the price by assigning value to the IDs found in getCharacterAmountPrice() and calculates
 function calculateCharacterAmountPrice() {
     const input = document.querySelector('input[name="character_amount"]').value;
     let extraCharacterPrice;
@@ -72,6 +56,7 @@ function calculateCharacterAmountPrice() {
         console.log("Something went wrong");
     }
 
+    // characterAmount is the input - 1 because the first character is covered in base price. We're only calculating for extra characters
     let characterAmount = input - 1;
 
     let sum = characterAmount * extraCharacterPrice;
@@ -80,6 +65,7 @@ function calculateCharacterAmountPrice() {
     return sum;
 }
 
+// Calculates the final result by adding together the base price with the extra character price found through calculateCharacterAmountPrice()
 function calculateResult() {
     let basePrice = getBasePrice();
     let extraCharacterPrice = calculateCharacterAmountPrice();
@@ -89,7 +75,7 @@ function calculateResult() {
     return sum;
 }
 
-// change HTML of H1 with ID #result to show the result
+// change the HTML of the empty H1 with ID #result to show the result
 function displayresult() {
 document.querySelector('#result').innerHTML = '$' + calculateResult();
 };
