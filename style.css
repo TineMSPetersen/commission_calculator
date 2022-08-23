@@ -1,0 +1,18 @@
+body {
+    background-image: url("background.png");
+    background-size:100%;
+}
+
+.container {
+    background-color: #2E2E2E;
+    width: 30vw;
+    margin:auto;
+    margin-top: 5%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    color:whitesmoke;
+    border: solid #000000;
+    border-radius: 20px;
+}
