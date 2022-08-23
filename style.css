@@ -98,7 +98,6 @@ input[type='radio']:checked:after {
     width: 100px;
     text-align: center;
     padding: 5px;
-    padding-left: 19px;
 }
 
 .submit_button {
