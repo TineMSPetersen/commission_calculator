@@ -19,7 +19,7 @@ function getBasePrice() {
     }
     
     return selectedType;
-};
+}
 
 // Checks which radio button is selected and returns the ID of said radio button.
 function getCharacterAmountPrice() {
@@ -66,7 +66,7 @@ function calculateCharacterAmountPrice() {
     let characterAmount = input - 1;
 
     let sum = characterAmount * extraCharacterPrice;
-    
+
     return sum;
 }
 
@@ -81,4 +81,4 @@ function calculateResult() {
 // change the HTML of the empty H1 with ID #result to show the result
 function displayresult() {
 document.querySelector('#result').innerHTML = '$' + calculateResult();
-};
+}
