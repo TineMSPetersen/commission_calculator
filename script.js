@@ -40,28 +40,33 @@ function getCharacterAmountPrice() {
 // Calculates the price by assigning value to the IDs found in getCharacterAmountPrice() and calculates
 function calculateCharacterAmountPrice() {
     const input = document.querySelector('input[name="character_amount"]').value;
+    
     let extraCharacterPrice;
-
-    if (getCharacterAmountPrice() === 'portrait') {
-        extraCharacterPrice = 60;
-    } else if (getCharacterAmountPrice() === 'flats') {
-        extraCharacterPrice = 55;
-    } else if (getCharacterAmountPrice() === 'shaded') {
-        extraCharacterPrice = 70;
-    } else if (getCharacterAmountPrice() === 'scene') {
-        extraCharacterPrice = 70;
-    } else if (getCharacterAmountPrice() === 'painted') {
-        extraCharacterPrice = 100;
-    } else {
-        console.log("Something went wrong");
+    switch (getCharacterAmountPrice()) {
+        case 'portrait':
+            extraCharacterPrice = 60;
+            break;
+        case 'flats':
+            extraCharacterPrice = 55;
+            break;
+        case 'shaded':
+            extraCharacterPrice = 70;
+            break;
+        case 'scene':
+            extraCharacterPrice = 70;
+            break;
+        case 'painted':
+            extraCharacterPrice = 100;
+            break;
+        default:
+            console.log(`Oh no, something went wrong`);
     }
 
     // characterAmount is the input - 1 because the first character is covered in base price. We're only calculating for extra characters
     let characterAmount = input - 1;
 
     let sum = characterAmount * extraCharacterPrice;
-
-    console.log(sum);
+    
     return sum;
 }
 
@@ -69,8 +74,6 @@ function calculateCharacterAmountPrice() {
 function calculateResult() {
     let basePrice = getBasePrice();
     let extraCharacterPrice = calculateCharacterAmountPrice();
-    console.log(typeof(basePrice));
-    console.log(typeof(extraCharacterPrice));
     let sum = parseInt(basePrice) + extraCharacterPrice;
     return sum;
 }
